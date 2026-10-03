@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>London Times - The Last Sins</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Direct Background Overlay -->
+  <style>
+    body {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('49489.jpeg') !important;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #0d0d0d;
+    }
+    
+    .reader-view {
+      display: none;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="brand">LONDON TIMES</div>
+    <nav class="nav-links">
+      <a href="#home" onclick="showMainPage('home')">Home</a>
+      <a href="#chapters" onclick="showMainPage('chapters')">Chapters</a>
+      <a href="#creators" onclick="showMainPage('creators')">Authors</a>
+      <a href="#archives" onclick="showMainPage('archives')">Archives</a>
+    </nav>
+  </header>
+
+  <!-- Main Website Sections -->
+  <div id="main-content">
+    <main style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+
+      <!-- Home Section -->
+      <section id="home" style="text-align: center; padding: 60px 0 80px 0;">
+        <h1 style="font-family: 'Cinzel', serif; font-size: 3rem; letter-spacing: 4px; color: #ffffff; margin-bottom: 15px;">
+          THE LAST SINS
+        </h1>
+        <p style="color: #b0b0b0; font-style: italic; font-size: 1.2rem; margin-bottom: 35px;">
+          Beneath every virtue lies a single sin.
+        </p>
+        <button class="begin-btn" onclick="openChapter(1)">Begin Journey</button>
+      </section>
+
+      <!-- Chapters Overview Section -->
+      <section id="chapters" style="padding-top: 40px; margin-bottom: 60px;">
+        <h2 class="section-title">CHAPTERS</h2>
+
+        <div class="chapter-card" onclick="openChapter(1)" style="cursor: pointer;">
+          <h3 style="margin: 0 0 5px 0; font-family: 'Cinzel', serif; color: var(--bright-blood, #ff1a1a);">CHAPTER 1</h3>
+          <p style="margin: 0; color: #d0d0d0; font-size: 1.1rem;">The City Beneath the Clock</p>
+        </div>
+
+        <div class="chapter-card" onclick="openChapter(2)" style="cursor: pointer;">
+          <h3 style="margin: 0 0 5px 0; font-family: 'Cinzel', serif; color: var(--bright-blood, #ff1a1a);">CHAPTER 2</h3>
+          <p style="margin: 0; color: #d0d0d0; font-size: 1.1rem;">The London Bridge Case</p>
+        </div>
+
+        <div class="chapter-card" onclick="openChapter(3)" style="cursor: pointer;">
+          <h3 style="margin: 0 0 5px 0; font-family: 'Cinzel', serif; color: var(--bright-blood, #ff1a1a);">CHAPTER 3</h3>
+          <p style="margin: 0; color: #d0d0d0; font-size: 1.1rem;">Coming Soon...</p>
+        </div>
+      </section>
+
+      <!-- Creators / Authors Section -->
+      <section id="creators" style="padding-top: 40px; margin-bottom: 60px;">
+        <h2 class="section-title">CREATORS</h2>
+
+        <div class="author-card" style="display: flex; align-items: center; gap: 20px;">
+          <div class="author-avatar">?</div>
+          <div>
+            <h3 style="margin: 0 0 8px 0; font-family: 'Cinzel', serif; color: #ffffff;">The Writers</h3>
+            <p class="coming-soon-text" style="margin: 0;">Author details coming soon...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Archives Section -->
+      <section id="archives" style="padding-top: 40px; margin-bottom: 60px; text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 40px;">THE ARCHIVES</h2>
+
+        <div style="font-family: 'Newsreader', serif; font-size: 1.25rem; line-height: 2.2; color: #d0d0d0; font-style: italic;">
+          <p style="margin-bottom: 20px;">London has always hidden its truths beneath its silence.</p>
+          <p style="margin-bottom: 20px;">Some stories are forgotten by time.</p>
+          <p style="margin-bottom: 20px;">Some are buried beneath blood and ash.</p>
+          <p style="margin-bottom: 40px;">And some should have never been remembered.</p>
+          <p style="font-family: 'Cinzel', serif; font-weight: 700; color: var(--bright-blood, #ff1a1a); font-style: normal; font-size: 1.4rem; letter-spacing: 2px;">
+            This is only the beginning.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Dedicated Reader Views for Chapters -->
+  
+  <!-- CHAPTER 1 READER -->
+  <div id="chapter-1-view" class="reader-view">
+    <div class="chapter-card" style="padding: 35px; border-left: 4px solid var(--bright-blood, #ff1a1a);">
+      <h2 style="font-family: 'Cinzel', serif; color: var(--bright-blood, #ff1a1a); font-size: 2rem; margin-top: 0;">
+        Chapter One: The City Beneath the Clock
+      </h2>
+      <p style="color: #8e9aae; font-style: italic; margin-bottom: 30px;">Published in London Times</p>
+      
+      <div style="line-height: 1.9; color: #d0d0d0; font-size: 1.15rem; margin-bottom: 40px;">
+        <p>The bells rang seven times.</p>
+        <p>Their deep, solemn echoes drifted across London, rolling over rooftops and slipping through the thick morning fog that swallowed the city whole.</p>
+        <p>To strangers, London was magnificent.</p>
+        <p>Grand buildings stood proudly beneath the gray sky. Carriages rattled across cobblestone streets. Merchants prepared their stalls while smoke curled from countless chimneys.</p>
+        <p>From a distance, it looked like the greatest city in the world.</p>
+        <p>But distance was a liar.</p>
+        <p>Beneath the beauty hid corruption. Beneath the wealth hid greed. Beneath every smiling face hid a secret waiting for the right moment to emerge.</p>
+        <p>London was a city that wore masks.</p>
+        <p>And no one understood that better than the people who lived at its bottom.</p>
+        <p>Far from the noble districts and luxurious estates stood a forgotten corner of the city—a place ignored by politicians and abandoned by opportunity.</p>
+        <p>The orphan quarter.</p>
+        <p>Its buildings were old. Its streets were narrow. Rainwater collected in broken stone pathways, and poverty clung to every wall like a permanent stain.</p>
+        <p>Among those streets walked a young man with a worn brown coat and a pocket watch hanging from his vest.</p>
+        <p>His name was Ronan.</p>
+        <p>And at that particular moment, he was chasing a cat.</p>
+        <p>"Stop! Come back here!"</p>
+        <p>The orange cat darted through an alleyway.</p>
+        <p>A basket of apples overturned as it passed.</p>
+        <p>A merchant immediately shouted in protest.</p>
+        <p>"My apples!"</p>
+        <p>"Sorry!" Ronan called back. "I'll pay for them later!"</p>
+        <p>The cat leaped over a wooden fence.</p>
+        <p>Ronan followed.</p>
+        <p>After several exhausting minutes, he finally cornered the animal beside a stack of crates.</p>
+        <p>The cat hissed.</p>
+        <p>Ronan sighed.</p>
+        <p>"You're causing more trouble than half the people in this city."</p>
+        <p>He carefully picked it up.</p>
+        <p>Moments later, a small girl came running down the street.</p>
+        <p>"Mr Ronan!"</p>
+        <p>The relief on her face was immediate.</p>
+        <p>Ronan handed over the cat.</p>
+        <p>The little girl hugged it tightly.</p>
+        <p>"Thank you!"</p>
+        <p>"You should watch him more carefully."</p>
+        <p>"I will."</p>
+        <p>"You said that last time."</p>
+        <p>The girl laughed.</p>
+        <p>"So you'll help me again if he runs away?"</p>
+        <p>Ronan smiled.</p>
+        <p>"Probably."</p>
+        <p>The girl grinned before running home.</p>
+        <p>Ronan watched her disappear into the crowd.</p>
+        <p>A small smile remained on his face.</p>
+        <p>That was the kind of work he usually received.</p>
+        <p>Lost pets.</p>
+        <p>Missing belongings.</p>
+        <p>Neighborhood disputes.</p>
+        <p>Nothing exciting.</p>
+        <p>Nothing dangerous.</p>
+        <p>Certainly nothing worthy of the title detective.</p>
+        <p>The government didn't consider him one.</p>
+        <p>Most officials barely knew he existed.</p>
+        <p>But Ronan didn't mind.</p>
+        <p>Helping people was enough.</p>
+        <p>At least, it used to be.</p>
+        <p>The city grew busier as the day passed.</p>
+        <p>Workers hurried through the streets.</p>
+        <p>Merchants argued with customers.</p>
+        <p>Children laughed while chasing each other between market stalls.</p>
+        <p>For a brief moment, everything felt normal.</p>
+        <p>Then a carriage appeared.</p>
+        <p>Unlike the others, this one immediately commanded attention.</p>
+        <p>Its black exterior gleamed despite the cloudy sky.</p>
+        <p>A silver crest decorated its side.</p>
+        <p>The reaction was instant.</p>
+        <p>People stepped aside.</p>
+        <p>Conversations stopped.</p>
+        <p>Heads lowered.</p>
+        <p>Ronan watched silently as the carriage rolled past.</p>
+        <p>Even from a distance, he recognized the emblem.</p>
+        <p>Ashford.</p>
+        <p>One of the most influential noble families in London.</p>
+        <p>Their wealth stretched across the kingdom.</p>
+        <p>Their influence reached places ordinary citizens could never imagine.</p>
+        <p>People respected them.</p>
+        <p>People feared them.</p>
+        <p>And people never questioned them.</p>
+        <p>The carriage disappeared into the fog.</p>
+        <p>Life resumed.</p>
+        <p>Ronan reached into his coat and removed the old pocket watch he carried everywhere.</p>
+        <p>The silver casing was scratched.</p>
+        <p>Its chain had lost its shine years ago.</p>
+        <p>Yet the watch continued to tick faithfully.</p>
+        <p>Tick. Tick. Tick.</p>
+        <p>For reasons he couldn't explain, the sound always comforted him.</p>
+        <p>As if it reminded him that no matter how difficult life became, time continued moving forward.</p>
+        <p>The sky darkened.</p>
+        <p>Rain began to fall.</p>
+        <p>Street lamps flickered awake one by one.</p>
+        <p>The city prepared for another ordinary evening.</p>
+        <p>Then the screaming started.</p>
+        <p>At first, nobody understood what was happening.</p>
+        <p>A woman rushed through the street.</p>
+        <p>Several guards followed behind her.</p>
+        <p>Their faces were pale.</p>
+        <p>Their movements frantic.</p>
+        <p>People immediately gathered.</p>
+        <p>"What happened?"</p>
+        <p>"Is there a fire?"</p>
+        <p>"No."</p>
+        <p>The woman looked as though she had seen a ghost.</p>
+        <p>Her voice trembled.</p>
+        <p>"A body."</p>
+        <p>The crowd fell silent.</p>
+        <p>"A body was found near London Bridge."</p>
+        <p>A chill ran through Ronan.</p>
+        <p>Something about the woman's expression felt wrong.</p>
+        <p>This wasn't ordinary fear.</p>
+        <p>It was horror.</p>
+        <p>Within minutes, rumors spread across the city.</p>
+        <p>People abandoned their work.</p>
+        <p>Shopkeepers left their stores.</p>
+        <p>Citizens flooded toward London Bridge.</p>
+        <p>Ronan followed.</p>
+        <p>The rain intensified.</p>
+        <p>The closer he got, the heavier the atmosphere became.</p>
+        <p>More guards appeared.</p>
+        <p>More barriers.</p>
+        <p>More frightened faces.</p>
+        <p>By the time he reached the bridge, dozens of officers had already secured the area.</p>
+        <p>Nobody was speaking.</p>
+        <p>Nobody dared.</p>
+        <p>Ronan slowly moved through the crowd.</p>
+        <p>Then he saw it.</p>
+        <p>The body.</p>
+        <p>For a moment, he couldn't breathe.</p>
+        <p>The victim lay motionless on the wet stone.</p>
+        <p>The brutality was unlike anything he had ever witnessed.</p>
+        <p>Even experienced guards looked disturbed.</p>
+        <p>One officer turned away and vomited.</p>
+        <p>Another stared in stunned silence.</p>
+        <p>Ronan felt his stomach tighten.</p>
+        <p>Whoever had done this hadn't simply wanted to kill.</p>
+        <p>They had wanted to send a message.</p>
+        <p>Then he noticed something beside the corpse.</p>
+        <p>A single playing card.</p>
+        <p>Rainwater flowed across its surface.</p>
+        <p>Yet the image remained perfectly visible.</p>
+        <p>A Fool.</p>
+        <p>The card rested silently beside the dead man.</p>
+        <p>As if it had been placed there intentionally.</p>
+        <p>As if it were a signature.</p>
+        <p>Thunder echoed above the city.</p>
+        <p>Far away, the great clock tower rang once more.</p>
+        <p>And standing among the crowd, staring at that strange card, Ronan felt a feeling he had never experienced before.</p>
+        <p>A feeling that something terrible had just entered London.</p>
+        <p>And that his life would never be the same again.</p>
+        <p style="text-align: center; color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif; margin-top: 30px;">End of Chapter One 🕰️🎭📖</p>
+      </div>
+
+      <!-- Navigation Actions -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: 20px;">
+        <button onclick="showMainPage('home')" class="begin-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+          &larr; Back to Home
+        </button>
+        <button onclick="openChapter(2)" class="begin-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+          Next Chapter: Chapter 2 &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 2 READER -->
+  <div id="chapter-2-view" class="reader-view">
+    <div class="chapter-card" style="padding: 35px; border-left: 4px solid var(--bright-blood, #ff1a1a);">
+      <h2 style="font-family: 'Cinzel', serif; color: var(--bright-blood, #ff1a1a); font-size: 2rem; margin-top: 0;">
+        Chapter 2: The London Bridge Case
+      </h2>
+      <p style="color: #8e9aae; font-style: italic; margin-bottom: 30px;">Published in London Times</p>
+      
+      <div style="line-height: 1.9; color: #d0d0d0; font-size: 1.15rem; margin-bottom: 40px;">
+        <h3 style="color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif;">Part 1</h3>
+        <p><strong>18 July</strong></p>
+        <p>By the time the first rays of sunlight touched the rooftops of London, the murder had become the only thing the city could talk about.</p>
+        <p>The streets were louder than usual. Not because of business. Not because of celebration. But because of fear.</p>
+        <p>Merchants discussed the incident while opening their shops. Workers argued about it before leaving for the factories. Coachmen exchanged rumors while waiting for passengers.</p>
+        <p>Even children whispered about the mysterious body found on London Bridge the previous night.</p>
+        <p>The newspapers had sold out before breakfast. Every headline carried the same story.</p>
+        <p><em>A Powerful Minister Found Dead on London Bridge.</em></p>
+        <p>Nobody knew the truth. Only rumors.</p>
+        <p>"I heard he was murdered before midnight."</p>
+        <p>"No... someone said it happened at dawn."</p>
+        <p>"They say the Royal Palace has already sealed the bridge."</p>
+        <p>"My cousin works near Westminster. He says the ministers haven't slept all night."</p>
+        <p>"And the killer... They say he left something beside the body. A playing card. The Fool."</p>
+        <p>Every conversation ended with silence. For the first time in years... London felt uneasy.</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+        
+        <p>Far from Westminster... In one of London's poorest neighborhoods... A small wooden door slowly opened.</p>
+        <p>Ronan stepped outside. His home was barely enough for one person. A worn-out table. A single chair. A bookshelf overflowing with old case files. Nothing luxurious. Nothing unnecessary.</p>
+        <p>He quietly reached into his coat pocket. Three copper coins. He stared at them for a second before closing his hand. That was all he had. Breakfast... Or nothing.</p>
+        <p>The smell of freshly baked bread drifted through the morning air. Without saying a word, Ronan began walking toward the neighborhood bakery.</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+        
+        <p>The bakery was already crowded. Fresh loaves filled the shelves. Golden crusts. Soft white bread. Warm rolls fresh from the oven.</p>
+        <p>Ronan looked at them only briefly. Then his eyes moved toward a small basket beneath the counter. Yesterday's bread. Hard. Dry. Cheap.</p>
+        <p>The old baker looked up and smiled. "Morning, Ronan."</p>
+        <p>"Morning."</p>
+        <p>Without asking any questions, the baker reached for the stale loaf. "The usual?"</p>
+        <p>Ronan nodded. "The usual."</p>
+        <p>For a moment... The baker glanced toward the fresh bread. His expression softened. He wanted to help. But another customer entered. A wealthy noblewoman dressed in expensive clothes.</p>
+        <p>The baker quietly placed the fresh loaf back where it belonged. He wrapped the stale bread instead. "I'm sorry."</p>
+        <p>Ronan smiled gently. "You don't have to be."</p>
+        <p>The baker placed the loaf on the counter. "Three copper."</p>
+        <p>Ronan emptied every coin he owned onto the wooden counter. The metallic sound echoed through the quiet shop. The baker accepted the payment.</p>
+        <p>As Ronan turned to leave... The old man spoke. "One day... You'll be buying the fresh ones."</p>
+        <p>Ronan looked back with a faint smile. "I hope so."</p>
+        <p>He stepped back into the streets of London. The loaf of bread rested beneath his arm. It wasn't heavy. Yet somehow... It felt like he was carrying the weight of his entire life.</p>
+        <p>He disappeared into the morning crowd... While behind him, London continued whispering about the murder that had changed everything.</p>
+
+        <!-- Part 2 -->
+        <h3 style="color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif; margin-top: 40px;">Part 2</h3>
+        <p>Ronan walked slowly through the narrow streets of East London. The stale loaf rested beneath his arm while the city around him continued discussing the murder.</p>
+        <p>No one noticed him. That was something he had grown accustomed to long ago. To most people, he was not a detective. He was simply another poor man in a worn-out coat. Another commoner trying to survive the day.</p>
+        <p>As he passed a small marketplace, two well-dressed noble boys stepped out of a carriage. One of them accidentally brushed against Ronan's shoulder. The boy immediately stepped back as though he had touched something filthy.</p>
+        <p>"Watch where you're going."</p>
+        <p>His friend pulled out a white handkerchief and dusted off the sleeve of his expensive coat. "Leave him. They're commoners. They don't know any better."</p>
+        <p>The boys laughed quietly before walking away. Ronan did not answer. He did not even turn around.</p>
+        <p>Insults had stopped hurting him years ago. Growing up as an orphan had taught him a cruel lesson very early in life—</p>
+        <p>The world was not divided between good people and bad people. It was divided between those with power... ...and those without it.</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+
+        <p>A few minutes later, he reached the end of the street. An old building stood there, its paint faded and its wooden sign barely hanging above the entrance.</p>
+        <p><em>St. Gabriel's Orphanage.</em></p>
+        <p>Ronan stopped walking. The sight pulled him backward through time. He could almost hear the voices of children arguing over scraps of food. He could almost feel the cold stone floor beneath his feet.</p>
+        <p>Memories returned one after another. Carrying sacks of rice that were heavier than he was. Selling newspapers before sunrise. Polishing strangers' boots for a single copper coin. Unloading carts until his hands bled.</p>
+        <p>Some days he earned enough to eat. Some days he did not. No one had protected him. No one had rescued him. He survived because he learned how to keep moving forward.</p>
+        <p>Ronan smiled faintly at the memory. "If I had chosen factory work," he murmured to himself, "I would probably have more money today."</p>
+        <p>He looked down at the detective badge hidden beneath his coat. "But I wouldn't be able to help people."</p>
+        <p>That thought alone was enough. He turned away from the orphanage and continued toward home.</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+
+        <p>By the time he reached his small house, the morning sun had climbed higher into the sky. Ronan unlocked the door and stepped inside.</p>
+        <p>The room was quiet. Too quiet. He placed the loaf on the table and removed his coat. For the first time that morning, he allowed himself to sit down.</p>
+        <p>His eyes drifted toward the stack of investigation files beside the window. The London Bridge murder refused to leave his thoughts. The blood. The wounds. The terror frozen on the victim's face.</p>
+        <p>Ronan closed his eyes for a moment. Then came a knock at the door.</p>
+        <p>Knock. Knock. Knock.</p>
+        <p>A familiar voice called from outside. "Ronan? You'd better open the door before I break it down."</p>
+        <p>A small smile appeared on his face despite himself. "Evelyn."</p>
+        <p>He crossed the room and opened the door. Standing outside was a young woman in a dark coat, a leather notebook tucked beneath one arm. Chestnut hair framed her face, and her eyes carried the same sharp curiosity they had carried since childhood.</p>
+        <p>"So," she said, folding her arms, "you really forgot about me?"</p>
+        <p>Ronan chuckled softly. "I was hoping you had forgotten where I live."</p>
+        <p>Evelyn rolled her eyes. "After twenty years? Impossible."</p>
+        <p>Without waiting for permission, she stepped inside. Her gaze moved around the tiny room. The cracked walls. The old table. The overflowing bookshelf. The single chair. Nothing had changed.</p>
+        <p>She sighed. "Ronan... this place still looks exactly the same."</p>
+        <p>Ronan shrugged. "I haven't had time to redecorate."</p>
+        <p>Evelyn noticed the loaf of bread wrapped in brown paper. She picked it up gently. "Yesterday's bread?"</p>
+        <p>Ronan remained silent. For a brief moment, something like sadness crossed her face. But she carefully placed the loaf back on the table without another comment.</p>
+        <p>Instead, she lifted a small paper bag from behind her back. "I brought coffee," she announced. "And before you say anything—no, you are not refusing it."</p>
+        <p>Ronan laughed quietly. "You always win these arguments."</p>
+        <p>"Of course I do."</p>
+        <p>They sat across from each other, and for a few peaceful minutes neither of them mentioned the murder. The silence felt familiar. Comfortable. Like two people who had known each other long before London learned their names.</p>
+        <p>Finally, Evelyn opened her notebook. "The whole city is talking about London Bridge," she said softly.</p>
+        <p>Ronan nodded. "I noticed."</p>
+        <p>"The London Times hasn't covered a story this big in years." She leaned forward slightly. "And Ronan... the Royal Palace is hiding something."</p>
+        <p>Ronan looked at her carefully. "You sound very certain."</p>
+        <p>Evelyn smiled faintly. "I have sources."</p>
+        <p>Outside, distant church bells echoed through the streets of London as the city continued whispering about the murder that had changed everything.</p>
+
+        <!-- Part 3 -->
+        <h3 style="color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif; margin-top: 40px;">Part 3</h3>
+        <p>For a brief moment... Neither of them spoke. The room remained silent until loud voices echoed from outside.</p>
+        <p>"RONAN! Come out already! We're going to be late!"</p>
+        <p>Evelyn smiled. "They're here."</p>
+        <p>Ronan shook his head with a small laugh. "My daily headache."</p>
+        <p>He opened the door. Standing outside were two young men wearing dusty factory uniforms. One was tall and broad-shouldered. The other looked younger, carrying his coat over one shoulder.</p>
+        <p>Samuel Brooks. Oliver Hayes. Both had been Ronan's closest friends since childhood.</p>
+        <p>Samuel grinned the moment he saw him. "There he is. The world's poorest detective."</p>
+        <p>Oliver laughed. "And somehow still richer than us in respect."</p>
+        <p>Ronan folded his arms. "You two only come here when you want something."</p>
+        <p>Samuel pointed toward the street. "We're done with work early today. So... You're coming with us."</p>
+        <p>"Where?"</p>
+        <p>"The tavern."</p>
+        <p>Ronan sighed. "I don't have money."</p>
+        <p>Samuel rolled his eyes. "You never do."</p>
+        <p>Oliver laughed. "That's why we're paying."</p>
+        <p>Before Ronan could refuse... Samuel grabbed his shoulder. "No excuses. You've been locked inside this house since yesterday. You need fresh air."</p>
+        <p>Evelyn stood up, closing her notebook. "I'll come too."</p>
+        <p>Samuel smiled. "Perfect. Now he'll have no excuse."</p>
+        <p>A few minutes later... The four of them walked through London's crowded streets. Workers were returning from the factories. The smell of coal filled the air. Horse-drawn carriages rattled over the wet stone roads. Despite everything that had happened... Life in London refused to stop.</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+
+        <p>The tavern was warm. Dim lanterns hung from wooden beams. Workers laughed loudly over cheap whisky. A violinist played quietly in one corner.</p>
+        <p>Samuel immediately ordered drinks. Three glasses of whisky. One cup of black coffee.</p>
+        <p>Oliver frowned. "You still won't drink?"</p>
+        <p>Ronan picked up the coffee. "I like remembering what happened the next morning."</p>
+        <p>The table erupted with laughter. For a while... They forgot about the murder. They talked about work. Old memories. Childhood. Life.</p>
+        <p>Then Evelyn suddenly placed today's newspaper on the table. The headline immediately silenced everyone.</p>
+        <p><strong>LONDON BRIDGE MURDER SHOCKS THE KINGDOM</strong></p>
+        <p>Samuel looked toward her. "So... What are people saying now?"</p>
+        <p>Evelyn crossed her arms. "The city thinks this is just another murder." She paused. "The Royal Palace doesn't."</p>
+        <p>Everyone became quiet.</p>
+        <p>"I've been speaking with a few sources this morning. They told me something interesting. The Palace spent the entire night arguing. They're trying to decide who should handle the investigation."</p>
+        <p>Oliver leaned forward. "So they're finally doing something."</p>
+        <p>"They have to. The victim wasn't an ordinary noble. He represented the kingdom in foreign affairs. If other nations hear about this... The King's reputation will suffer."</p>
+        <p>Samuel lowered his voice. "So who are they assigning?"</p>
+        <p>Evelyn glanced around before speaking. "They've already selected one of the kingdom's most respected forensic examiners. Dr. Theodore Graves. And an honest police inspector. Inspector Elias Ward."</p>
+        <p>Ronan listened quietly. "What makes them different?"</p>
+        <p>"They can't be bought."</p>
+        <p>Samuel let out a low whistle. "So the Palace actually wants the truth?"</p>
+        <p>Evelyn slowly shook her head. "No. They want control. If the public discovers what Lord Beaumont was truly involved in... The kingdom could lose faith in the nobles. They're trying to stop panic before it begins."</p>
+        <p>Oliver frowned. "So what now?"</p>
+        <p>Evelyn looked directly at Ronan. "My source also said something else. The ministers are looking for someone... ...who has no ties to noble families. ...someone the public already trusts. ...someone independent."</p>
+        <p>Ronan remained silent. For some reason... That sentence stayed in his mind.</p>
+        <p>Outside... Thunder rolled across London's sky. Rain began striking the tavern windows. Ronan stared quietly into his untouched coffee. Then... Something flashed through his memory. His eyes widened.</p>
+        <p>The bridge. The body. The blood. And... Something else. Something he had ignored.</p>
+        <p>He slowly stood up. Samuel frowned. "Ronan?"</p>
+        <p>He didn't answer. "I missed something."</p>
+        <p>The table fell silent. "What do you mean?"</p>
+        <p>Ronan looked toward the rain outside. "There was something near the crime scene. Not beside the body... Near the edge of the bridge."</p>
+        <p>Without another word... He grabbed his coat and rushed toward the tavern door.</p>
+        <p>Evelyn immediately stood. "Ronan!"</p>
+
+        <!-- Part 4 -->
+        <h3 style="color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif; margin-top: 40px;">Part 4</h3>
+        <p>The tavern door slammed shut behind Ronan. Cold rain immediately soaked his coat. He ignored it. His heart pounded faster with every step.</p>
+        <p>The streets blurred around him as he ran through the darkness. People shouted. Carriages rushed past. The city continued moving. But Ronan heard none of it. Only one thought echoed inside his mind.</p>
+        <p><em>The bridge.</em></p>
+        <p>He remembered standing beside Lord Beaumont's body. He remembered the blood. The Royal Guards. The growing crowd. And then... Something near the edge of the bridge. Something he had dismissed in the chaos.</p>
+        <p>He should have checked. He should have looked closer.</p>
+        <p>Behind him, Evelyn called out his name, but the rain swallowed her voice.</p>
+        <p>Within minutes... London Bridge emerged through the thick blanket of fog. The crime scene had already been abandoned. The Guards were gone. Only silence remained.</p>
+        <p>Rainwater slowly washed away the last traces of blood. Ronan walked toward the exact place where Lord Beaumont's body had been discovered. His breathing slowed. Every detail returned to him.</p>
+        <p>Ten feet away... Near the old stone railing. There.</p>
+        <p>He knelt. His fingers searched carefully between the cracks in the weathered stones. Nothing. He searched again. Still nothing.</p>
+        <p>Then... His fingertips brushed against something thin. Paper. Carefully... He pulled it free.</p>
+        <p>A single playing card. The Fool.</p>
+        <p>His heartbeat stopped. It looked identical to the first one. But this one... Had something written on the back.</p>
+        <p>Ronan slowly turned the card over. Only one sentence.</p>
+        <p style="text-align: center; color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif; font-size: 1.2rem; margin: 25px 0;">
+          «"You're looking in the wrong direction."»
+        </p>
+        <p>For several long seconds... He couldn't move. The cold wind swept across London Bridge. His eyes instinctively searched the rooftops. The towers. The empty streets. The darkness hidden behind the fog.</p>
+        <p>Nothing. No footsteps. No movement. Only silence.</p>
+        <p>Yet... For the first time in his life... Ronan felt certain of one thing. The killer had never truly left. He had simply been watching. Watching the police. Watching the Royal Guards. Watching... Everyone.</p>
+        <p>A distant church bell echoed across London. One... Two... Three... Midnight.</p>
+        <p>Ronan carefully slipped the card inside his coat. His expression had completely changed. This was no longer just another murder investigation. Someone had planned every step. Someone had expected the authorities to overlook the second card. Someone wanted the investigation to begin exactly this way.</p>
+        <p>Far beyond the bridge... Hidden somewhere within London's endless fog... A lone figure stood motionless. For just a brief moment... A faint smile appeared beneath the shadow of a wide-brimmed hat. Then the figure quietly disappeared into the darkness.</p>
+        <p>Ronan remained standing on the bridge, the rain falling around him. He looked once more at the empty road stretching into the night. Somewhere in this city... A murderer was waiting.</p>
+        <p>And for the first time... Ronan realized he wasn't simply investigating a crime. He had stepped into someone else's plan.</p>
+        
+        <p style="text-align: center; color: var(--bright-blood, #ff1a1a); font-family: 'Cinzel', serif; margin-top: 30px; font-size: 1.2rem;">End of Chapter 2</p>
+      </div>
+
+      <!-- Navigation Actions -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: 20px;">
+        <button onclick="openChapter(1)" class="begin-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+          &larr; Previous Chapter
+        </button>
+        <button onclick="openChapter(3)" class="begin-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+          Next Chapter: Chapter 3 &rarr;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 3 READER PLACEHOLDER -->
+  <div id="chapter-3-view" class="reader-view">
+    <div class="chapter-card" style="padding: 35px; border-left: 4px solid var(--bright-blood, #ff1a1a);">
+      <h2 style="font-family: 'Cinzel', serif; color: var(--bright-blood, #ff1a1a); font-size: 2rem; margin-top: 0;">
+        Chapter 3: Coming Soon
+      </h2>
+      <p style="color: #8e9aae; font-style: italic; margin-bottom: 30px;">Published in London Times</p>
+      
+      <div style="line-height: 1.9; color: #d0d0d0; font-size: 1.15rem; margin-bottom: 40px; text-align: center;">
+        <p style="font-style: italic;">This chapter is currently locked in the archives...</p>
+        <p style="color: #8e9aae;">Check back soon for the next installment of Ronan's investigation.</p>
+      </div>
+
+      <!-- Navigation Actions -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: 20px;">
+        <button onclick="openChapter(2)" class="begin-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+          &larr; Previous Chapter
+        </button>
+        <button onclick="showMainPage('home')" class="begin-btn" style="padding: 8px 18px; font-size: 0.9rem;">
+          Back to Home
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Code to handle page switching -->
+  <script>
+    function openChapter(num) {
+      document.getElementById('main-content').style.display = 'none';
+      document.querySelectorAll('.reader-view').forEach(view => view.style.display = 'none');
+      
+      const targetView = document.getElementById('chapter-' + num + '-view');
+      if (targetView) {
+        targetView.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function showMainPage(sectionId) {
+      document.querySelectorAll('.reader-view').forEach(view => view.style.display = 'none');
+      document.getElementById('main-content').style.display = 'block';
+      
+      if (sectionId) {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

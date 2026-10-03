@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Last Sins - Chapter</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Newsreader:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand"><a href="index.html" style="color: inherit; text-decoration: none;">LONDON TIMES</a></div>
+  </header>
+
+  <main class="main-container">
+    <div style="margin-bottom: 2rem;">
+      <a href="index.html" class="read-link">← Back to All Chapters</a>
+    </div>
+
+    <article class="chapter-content">
+      <h3 id="chapter-number" class="sub-title" style="text-align: center;">---</h3>
+      <h1 id="chapter-title" class="book-title" style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">---</h1>
+      
+      <div id="chapter-body" style="font-size: 1.15rem; line-height: 1.8;">
+        <!-- Dynamic Content -->
+      </div>
+    </article>
+
+    <div style="margin-top: 3rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+      <a href="index.html" class="btn-primary">Back to Home</a>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const chapterId = parseInt(urlParams.get('id')) || 1;
+
+    const chapter = bookData.chapters.find(c => c.id === chapterId);
+
+    if (chapter) {
+      document.getElementById('chapter-number').innerText = `CHAPTER ${chapter.id}`;
+      document.getElementById('chapter-title').innerText = chapter.title;
+      document.title = `${chapter.title} - The Last Sins`;
+
+      const bodyContainer = document.getElementById('chapter-body');
+      bodyContainer.innerHTML = '';
+
+      chapter.content.forEach(paragraph => {
+        const p = document.createElement('p');
+        p.style.marginBottom = '1.5rem';
+        p.innerText = paragraph;
+        bodyContainer.appendChild(p);
+      });
+    } else {
+      document.getElementById('chapter-title').innerText = "Chapter Not Found";
+    }
+  </script>
+</body>
+</html>
